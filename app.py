@@ -43,7 +43,9 @@ def update_customer(customer_id):
 def delete_customer(customer_id):
     if customer_id in customers:
         del customers[customer_id]
-    return 'okay', 200
+        return 'okay', 200
+    else:
+        return 'not found', 404
 
 
 # Save a resource
@@ -57,14 +59,14 @@ def save_customer():
 
 
 # -----------------------------------------------------
-# Basic example for an asyn method call
+# Basic example for an async method call
 # -----------------------------------------------------
 
 @app.route('/do_your_magic', methods=['POST'])
 def do_magic():
     data = request.json
 
-    print data
+    print(data)
     # process the data
 
     response_object = {
@@ -81,5 +83,5 @@ def do_magic():
     if success:
         return jsonify(response_object), 200
     else:
-        print 'Uuuups something broke'
+        print('Uuuups something broke')
         return 'Magic Error Message', 500
