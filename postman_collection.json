@@ -1,10 +1,28 @@
 {
 	"info": {
-		"_postman_id": "aa2f5127-129a-447c-9898-6e17ee29eb4b",
+		"_postman_id": "d06f4bb0-07c1-43d9-8038-b224da34a951",
 		"name": "Microservice Example",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
+		{
+			"name": "TEST SERVER CONNECTION",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
 		{
 			"name": "DO MAGIC STUFF",
 			"request": {
@@ -29,6 +47,35 @@
 					"port": "5000",
 					"path": [
 						"do_your_magic"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CALCULATE A PRICE",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"customers\": [\"customer_1\", \"customer_3\"]\n}"
+				},
+				"url": {
+					"raw": "localhost:5000/calculate_price",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"calculate_price"
 					]
 				}
 			},

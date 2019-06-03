@@ -134,7 +134,10 @@ def calculate_price():
             success = False
             break
 
-        customer_price = customers[customer]['price']
+        if 'price' not in customers[customer]:
+            customer_price = 0
+        else:
+            customer_price = customers[customer]['price']
         step_price = customer_price * hours
 
         per_step.append({'hours': hours, 'price': step_price})
