@@ -101,3 +101,62 @@ def do_magic():
     else:
         print('Uuuups something broke')
         return 'Magic Error Message', 500
+
+
+# -----------------------------------------------------
+# Simple example of a price calculation
+# -----------------------------------------------------
+
+@app.route('/calculate_price', methods=['POST'])
+def calculate_price():
+    status = "Magic Error Message\n"
+    success = True
+
+    data = request.json
+
+    print(data)
+    # process the data
+    customer_list = []
+    if 'customers' in data:
+        customer_list = data['customers']
+
+    if len(customer_list) == 0:
+        status += 'Need at least one customer: {"customers": ["customer_1","customer_2"]}\n'
+        success = False
+
+    total_price = 0
+    hours = 3
+    per_step = []
+    # for each factory add
+    for customer in customer_list:
+        if customer not in customers:
+            status += 'Customer ' + customer + ' was not found.\n'
+            success = False
+            break
+
+        customer_price = customers[customer]['price']
+        step_price = customer_price * hours
+
+        per_step.append({'hours': hours, 'price': step_price})
+        total_price += step_price
+
+        hours -= 1
+
+        if hours < 1:
+            hours = 3
+
+    # return status code and response
+    if success:
+        # add 15% for us
+        total_price *= 1.15
+
+        response_object = {
+            'customers': customer_list,
+            'price': total_price,
+            'per_step': per_step
+        }
+
+        return jsonify(response_object), 200
+    else:
+        print('Uuuups something broke')
+        return status, 500
