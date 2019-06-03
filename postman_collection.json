@@ -1,0 +1,153 @@
+{
+	"info": {
+		"_postman_id": "aa2f5127-129a-447c-9898-6e17ee29eb4b",
+		"name": "Microservice Example",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:5000/do_your_magic",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"magic_input_1\":1,\n\t\"magic_input_2\":\"Some text\",\n\t\"magic_input_3\":1.0001\n}"
+				},
+				"url": {
+					"raw": "localhost:5000/do_your_magic",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"do_your_magic"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:5000/customers",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"first_name\":\"Manuel\",\n\t\"last_name\": \"Mann\"\n}"
+				},
+				"url": {
+					"raw": "localhost:5000/customers",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"customers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:5000/customers/customer_10",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/customers/customer_10",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"customers",
+						"customer_10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:5000/customers/customer_10",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"first_name\": \"Manuel\"\n}"
+				},
+				"url": {
+					"raw": "localhost:5000/customers/customer_10",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"customers",
+						"customer_10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:5000/customers/customer_1",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/customers/customer_1",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"customers",
+						"customer_1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:5000/customers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/customers",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"customers"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
