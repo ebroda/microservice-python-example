@@ -6,11 +6,15 @@ Documentation can be found under: http://flask.pocoo.org/docs/1.0/
 
 It implements the basic REST routes for an example customer resource.
 
+    GET / : Welcome Message
     GET /customers : Retrieve all customers
     GET /customers/<customer_id> : Retrieve a single customer resource
     PUT /customers/<customer_id> : Update a single customer resource
     DELETE /customers/<customer_id> : Delete a single customer resource
     POST /customers : Create a new customer resource
+    
+    POST /do_your_magic: Barebone example for a simple service
+    POST /calculate_price: (Simple) example for a possible price calculation
 
 Additionally there is a endpoint called "do_your_magic" as an barebone example on how to implement a simple service.
 
