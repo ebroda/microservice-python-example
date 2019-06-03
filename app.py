@@ -20,7 +20,7 @@ def find_all_customers():
 # Get a single resource
 @app.route('/customers/<customer_id>', methods=['GET'])
 def find_single_customer(customer_id):
-    if not customer_id in customers:
+    if customer_id not in customers:
         return '', 404
     return jsonify(customers[customer_id])
 
