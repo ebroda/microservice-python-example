@@ -14,7 +14,7 @@ app = Flask(__name__)
 # Get a list of resources
 @app.route('/customers', methods=['GET'])
 def find_all_customers():
-    return jsonify(customers.values())
+    return jsonify(list(customers.values()))
 
 
 # Get a single resource
