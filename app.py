@@ -11,6 +11,11 @@ app = Flask(__name__)
 # Basic 'customer' example for REST like resource paths
 # -----------------------------------------------------
 
+
+@app.route('/', methods=['GET'])
+def index():
+    return 'DPNB Microservice Demonstrator'
+
 # Get a list of resources
 @app.route('/customers', methods=['GET'])
 def find_all_customers():
