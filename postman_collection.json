@@ -6,7 +6,7 @@
 	},
 	"item": [
 		{
-			"name": "localhost:5000/do_your_magic",
+			"name": "DO MAGIC STUFF",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -35,7 +35,7 @@
 			"response": []
 		},
 		{
-			"name": "localhost:5000/customers",
+			"name": "CREATE NEW CUSTOMER",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -64,26 +64,26 @@
 			"response": []
 		},
 		{
-			"name": "localhost:5000/customers/customer_10",
+			"name": "FIND SINGLE CUSTOMER",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:5000/customers/customer_10",
+					"raw": "localhost:5000/customers/customer_1",
 					"host": [
 						"localhost"
 					],
 					"port": "5000",
 					"path": [
 						"customers",
-						"customer_10"
+						"customer_1"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "localhost:5000/customers/customer_10",
+			"name": "UPDATE SINGLE CUSTOMER",
 			"request": {
 				"method": "PUT",
 				"header": [
@@ -99,21 +99,21 @@
 					"raw": "{\n\t\"first_name\": \"Manuel\"\n}"
 				},
 				"url": {
-					"raw": "localhost:5000/customers/customer_10",
+					"raw": "localhost:5000/customers/customer_1",
 					"host": [
 						"localhost"
 					],
 					"port": "5000",
 					"path": [
 						"customers",
-						"customer_10"
+						"customer_1"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "localhost:5000/customers/customer_1",
+			"name": "DELETE SINGLE CUSTOMER",
 			"request": {
 				"method": "DELETE",
 				"header": [],
@@ -132,7 +132,7 @@
 			"response": []
 		},
 		{
-			"name": "localhost:5000/customers",
+			"name": "FIND ALL CUSTOMERS",
 			"request": {
 				"method": "GET",
 				"header": [],
